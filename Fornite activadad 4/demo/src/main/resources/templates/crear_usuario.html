@@ -60,33 +60,36 @@
 
         <h1>Método de pago</h1>
 
-        <div class="col-10">
-            <label for="inputAddress" class="form-label">Numero de tarjeta</label>
-            <input type="number" class="form-control" id="inputAddress" th:field="*{tarjetaCredito.numTarjeta}">
+       <div class="col-10">
+           <label for="inputAddress" class="form-label">Numero de tarjeta</label>
+           <input type="number" class="form-control" id="inputAddress" th:field="*{tarjetaCredito.num_tarjeta}">
+       </div>
+
+       <div class="col-md-3">
+           <label for="inputAddress" class="form-label">Mes</label>
+           <input type="text" class="form-control" id="inputmes" th:field="*{tarjetaCredito.mes}">
+
+       </div>
+
+       <div class="col-md-3">
+           <label for="inputAddress" class="form-label">año</label>
+           <input type="text" class="form-control" id="inputaño" th:field="*{tarjetaCredito.caducidad}">
+       </div>
+
+       <div class="col-md-3">
+           <label for="inputAddress" class="form-label">cvv</label>
+           <input type="text" class="form-control" id="inputcvv" th:field="*{tarjetaCredito.cvv}">
+
+
+       </div>
+        <div class="col-md-5">
+            <input class="btn btn-primary" type="submit" value="Crear">
+            </a>
         </div>
-        <!--
-        <div class="col-md-3">
-            <label for="inputAddress" class="form-label">Mes</label>
-            <input type="text" class="form-control" id="inputmes" th:field="*{mes}">
 
-        </div>
+   </form>
+   <h1></h1>
 
-        <div class="col-md-3">
-            <label for="inputAddress" class="form-label">año</label>
-            <input type="text" class="form-control" id="inputaño" th:field="*{caducidad}">
-        </div>
-
-        <div class="col-md-3">
-            <label for="inputAddress" class="form-label">cvv</label>
-            <input type="text" class="form-control" id="inputcvv" th:field="*{cvv}">
-
-
-        </div>
-    </form>
-    <h1></h1>
-    <div class="col-md-5">
-        <input class="btn btn-primary" type="submit" value="Crear">
-    </div>
 </div>
 
 

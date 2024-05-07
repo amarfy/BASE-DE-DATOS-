@@ -48,11 +48,11 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="usuario : ${usuario}">
-        <td th:text="${usuario.id}"></td>
-        <td th:text="${usuario.email_del_usuario}"></td>
-        <td th:text="${usuario.nombre_de_usuario}"></td>
-        <td th:text="${usuario.num_tarjeta}"></td>
+    <tr th:each="usuario : ${usuarios}">
+         <td th:text="${usuario.id}"></td>
+        <td th:text="${usuario.getEmail_del_usuario()}"></td>
+        <td th:text="${usuario.getNombre_de_usuario()}"></td>
+        <td th:text="${usuario.getTarjetaCredito().getNum_tarjeta()}"></td>
     </tr>
 
 

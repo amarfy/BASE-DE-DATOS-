@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,12 +29,13 @@ public class UsuarioController {
     @PostMapping("/guardar_usuario")
     public String post_usuario(@ModelAttribute Usuario usuario, Model model){
         usuarioRepository.save(usuario);
+        model.addAttribute("usuario", usuario);
         return "guardar_usuario";
     }
 
     @GetMapping("/Mostrar_usuarios")
     public String Mostrar_usuarios(Model model){
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        ArrayList<Usuario> usuarios = (ArrayList<Usuario>) usuarioRepository.findAll();
         model.addAttribute("usuarios", usuarios);
         return "Mostrar_usuarios";
     }

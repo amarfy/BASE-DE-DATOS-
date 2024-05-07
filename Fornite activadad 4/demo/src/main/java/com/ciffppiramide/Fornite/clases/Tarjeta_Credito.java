@@ -3,7 +3,7 @@ package com.ciffppiramide.Fornite.clases;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Tarjeta_Credito")
+@Table(name = "tarjeta")
 public class Tarjeta_Credito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,10 +21,17 @@ public class Tarjeta_Credito {
     @Column(name = "num_tarjeta", nullable = false)
     private int num_tarjeta;
 
-    @OneToOne(mappedBy = "Tarjeta_Credito")
-    @JoinColumn(name = "fk_usuario_id",referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_id_usuario",referencedColumnName = "id")
     private Usuario usuario;
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public Long getId() {
         return id;

@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
 @Entity
-@Table(name = "Tarjeta_Credito")
+@Table(name = "usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,25 @@ public class Usuario {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @OneToOne(mappedBy = "Usuario" )
+    @OneToOne(mappedBy = "usuario" )
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Tarjeta_Credito tarjetaCredito;
+
+    public Tarjeta_Credito getTarjetaCredito() {
+        return tarjetaCredito;
+    }
+
+    public void setTarjetaCredito(Tarjeta_Credito tarjetaCredito) {
+        this.tarjetaCredito = tarjetaCredito;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNombre_de_usuario() {
         return nombre_de_usuario;
